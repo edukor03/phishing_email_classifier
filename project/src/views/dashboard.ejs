@@ -1,0 +1,93 @@
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/navbar.ejs') %>
+
+<div class="dashboard-container section">
+    <h1>Dashboard</h1>
+    <div class="dashboard-row">
+        <div id="" class="card">
+            <h3 class="card-title">Total Emails</h3>
+            <div class="card-content">
+                <p class="card-big-text"><%= data.stats.num_emails %></p>
+            </div>
+        </div>
+        <div id="" class="card">
+            <h3 class="card-title">Phishing Emails</h3>
+            <div class="card-content">
+                <p class="card-big-text"><%= data.stats.num_phishing %> <span class="positive-highlight card-small-text">(<%= data.stats.phishing_percent %>%)</span></p>
+            </div>
+        </div>
+        <div id="" class="card">
+            <h3 class="card-title">Safe Emails</h3>
+            <div class="card-content">
+                <p class="card-big-text"><%= data.stats.num_safe %> <span class="positive-highlight card-small-text">(%= 100 - data.stats.phishing_percent %>%)</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-row">
+        <div class="card">
+            <h3 class="card-title">Latest Scan Results</h3>
+            <div class="card-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th>Email</th>
+                        <th>Length</th>
+                        <th>Links</th>
+                        <th>Caps</th>
+                        <th>Prediction</th>
+                        <th>Confidence</th>
+                        <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% data.forEach(r => { %>
+                        <tr>
+                            <td><%= r.text.slice(0,60) %>...</td>
+                            <td><%= r.length %></td>
+                            <td><%= r.num_links %></td>
+                            <td><%= r.num_caps %></td>
+                            <td class="<%= r.prediction ? 'phish' : 'safe' %>">
+                            <%= r.prediction ? "Phishing" : "Safe" %>
+                            </td>
+                            <td><%= r.confidence %></td>
+                            <td><%= r.date %></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="dashboard-column">
+            <div id="" class="card">
+                <h3 class="card-title">Phishing Common Words</h3>
+                <div class="card-content">
+                    <ul class="word-list">
+                        <% data.top_phishing_words.forEach(w => { %>
+                            <li>
+                                <span class="word"><%= w.word %></span>
+                                <span class="count">(<%= w.count %>)</span>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+            <div id="" class="card">
+                <h3 class="card-title">Safe Common Words</h3>
+                <div class="card-content">
+                    <ul class="word-list">
+                        <% data.top_safe_words.forEach(w => { %>
+                            <li>
+                                <span class="word"><%= w.word %></span>
+                                <span class="count">(<%= w.count %>)</span>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

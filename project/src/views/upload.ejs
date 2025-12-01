@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/navbar.ejs') %>
+
+<div class="section">
+    <h1>Upload File</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label>
+            Upload a file in CSV format:
+            <input id="fileInput" name="file" type="file" accept=".csv" required> 
+        </label>
+        <input id="submit" type="submit" value="Submit">
+    </form> 
+
+    <div id="preview">
+
+    </div>
+</div>
+
+<script src="./js/previewFile.js"></script>
+<script src="./js/uploadFile.js"></script>
+
+<%- include('./partials/footer.ejs') %>

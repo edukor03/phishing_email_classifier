@@ -1,0 +1,28 @@
+.navigation-bar {
+    width: 160px;
+    height: 100vh;
+    background-color: #0d2331;
+}
+
+.navigation-btn-container {
+    list-style-type: none;
+}
+
+.navigation-btn a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    padding: 0.8rem 0.8rem;
+    display: block;
+}
+
+.navigation-bar a:hover {
+    background-color: #163c53;
+}
+
+.logo {
+    color: #a4fff0;
+    display: block;
+    padding: 1.2rem 0.8rem;
+    font-size: 24px;
+}
