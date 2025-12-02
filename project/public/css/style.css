@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html, body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0a141e 0%, #09131d 50%, #050a11 100%);
+  color: #e4e7eb;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   SIDEBAR
+------------------------- */
+.navigation-bar {
+  width: 220px;
+  height: 100vh;
+  background: #0d2331;
+  position: sticky;
+  top: 0;
+  padding: 20px 0;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logo {
+  color: #a4fff0;
+  padding: 0 1.4rem 1rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation-btn-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navigation-btn a {
+  display: block;
+  color: white;
+  padding: 0.8rem 1.4rem;
+  transition: 0.2s;
+}
+
+.navigation-btn a:hover {
+  background: #163c53;
+}
+
+/* -------------------------
+   PAGE CONTENT
+------------------------- */
+.layout {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 40px;
+}
+
+/* -------------------------
+   CARDS
+------------------------- */
+.card {
+  background: #0d1823;
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-card-fixed {
+  width: 230px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-card-expand {
+  flex: 1;
+  min-height: 260px;
+}
+
+/* -------------------------
+   CARD TEXT
+------------------------- */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-big-text {
+  font-size: 38px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.card-small-text {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* -------------------------
+   STATUS COLORS
+------------------------- */
+.phish {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.safe {
+  color: #7ce7b3;
+  font-weight: bold;
+}
+
+/* -------------------------
+   TABLE
+------------------------- */
+.table {
+  width: 100%;
+  margin-top: 1.2rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead {
+  background: #1f2937;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #2f3640;
+}
+
+.table tr:hover {
+  background: #111827;
+}
+
+/* -------------------------
+   PAGINATION
+------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.page {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #1f2937;
+  color: #fff;
+  text-decoration: none;
+}
+
+.page:hover {
+  background: #374151;
+}
+
+.page.current {
+  background: #58a6ff;
+  font-weight: bold;
+}
+
+/* -------------------------
+   FORMS
+------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #2c3e50;
+  background: #0c1828;
+  color: white;
+}

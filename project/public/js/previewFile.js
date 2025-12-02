@@ -15,7 +15,7 @@ document.getElementById("fileInput").addEventListener("change", (e) => {
         `;
 
         rows.slice(1,10).forEach(row => {
-            html += `<tr><td>${row.substring(0,80)}...</td></tr>`;
+            html += `<tr><td>${row.substring(0,300)}...</td></tr>`;
         });
 
         html += `<tbody></table>`
