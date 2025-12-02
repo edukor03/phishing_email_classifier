@@ -22,6 +22,8 @@ To run the application: nodemon app.js
 
 ..
 
+---
+
 ## ⚙️ Technologies Used
 - Python
 - JavaScript (Node.js, Express JS)
