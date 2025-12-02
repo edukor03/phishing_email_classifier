@@ -3,6 +3,8 @@
 This folder contains the backend application that runs the phishing classifier in production.  
 It integrates the trained machine learning model with an Express.js server and exposes API endpoints for classification and communication with the system.
 
+To run the application: nodemon app.js
+
 ---
 
 ## 🚀 Features
@@ -18,24 +20,10 @@ It integrates the trained machine learning model with an Express.js server and e
 
 ## 🧱 Folder Structure
 
-project/
-│
-├── python/ # ML model runtime + utilities
-│ ├── data/
-│ ├── models/ # Saved .pkl models
-│ ├── scripts/ # classification and preprocessing
-│
-├── shared/ # shared config or utilities
-│ └── config.js
-│
-├── src/
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-│ └── views/
-│
-├── server.js # Express entrypoint
-├── app.js
-├── package.json
-└── README.md
+..
+
+## ⚙️ Technologies Used
+- Python
+- JavaScript (Node.js, Express JS)
+- HTML/CSS (EJS for templating)
 
