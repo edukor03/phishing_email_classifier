@@ -36,12 +36,13 @@ export const Upload = (req, res) => {
 }
 
 export const HandleUpload = (req, res) => {
-
     if (!req.file) {
         return res.status(400).json({ error: "No file uploaded." });
     }
 
-    exec(`python python/scripts/process_file.py ${req.file.path}`, (err, stdout) => {
+    const filePath = req.file.path;
+
+    exec(`python python/scripts/process_file.py "${req.file.path}"`, (err, stdout) => {
         if (err) {
             console.log(err);
             return res.status(500).json({ error: "Model error" });
@@ -50,10 +51,13 @@ export const HandleUpload = (req, res) => {
         const output = JSON.parse(stdout);
         results.setResults(output);
 
-        // delete uploaded file
-        fs.unlink(req.file.path, () => {});
+        // DELETE THE FILE HERE (AFTER PYTHON)
+        fs.unlink(req.file.path, (error) => {
+            if (error) console.log("File delete error:", error);
+        });
 
         return res.json({ success: true });
     });
+
 };
 
