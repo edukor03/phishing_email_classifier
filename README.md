@@ -2,7 +2,7 @@
 
 A lightweight machine learning project for detecting phishing emails using natural-language features, paired with a Node.js dashboard for visualizing scan results. The system processes uploaded email text files, classifies each email as **Phishing** or **Safe**, and displays predictions, confidence scores, and basic metadata.
 
----
+
 
 ## Overview
 
@@ -14,7 +14,7 @@ This project combines:
 
 The result is an interactive dashboard where users can upload email files and instantly view prediction outcomes.
 
----
+
 
 ## Features
 
@@ -27,7 +27,7 @@ The result is an interactive dashboard where users can upload email files and in
 - Summary cards showing total, phishing, and safe emails  
 - Modular architecture for easy improvements or model swaps  
 
----
+
 
 ## Tech Stack
 
@@ -45,7 +45,7 @@ The result is an interactive dashboard where users can upload email files and in
 - HTML / CSS / JavaScript  
 - Simple dashboard layout  
 
----
+
 
 ## How It Works
 
@@ -54,14 +54,14 @@ The result is an interactive dashboard where users can upload email files and in
 3. Python script loads the trained model, extracts features, and makes predictions.  
 4. Results are returned to Node.js and displayed in the dashboard table.  
 
----
+
 
 ## Current Limitations
 
 - The **Scan Emails** page does not currently connect to any email server.  
 - Email server integration (IMAP/POP3) is a possible future enhancement but not a priority.
 
----
+
 
 ## Possible Future Improvements
 
@@ -70,18 +70,3 @@ The result is an interactive dashboard where users can upload email files and in
 - Upgrading to transformer-based embeddings  
 - Deploying a hosted demo  
 - Additional analytics in the dashboard  
-
----
-
-## Getting Started
-
-### 1. Install Dependencies
-
-**Python**
-```bash
-pip install -r requirements.txt
-npm install
-npm app.js
-```
-
-Application will run at: **http://localhost:3000**
